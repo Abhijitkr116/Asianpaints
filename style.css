@@ -47,6 +47,22 @@ canvas {
     background: transparent; /* Make the canvas background transparent */
     z-index: 100;
 }
+.herosection{
+    height: 100%;
+    width: 100%;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.herosection h1{
+    background: -webkit-linear-gradient(#F2942C,#502265);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: Samsung;
+    font-size: 9vw;
+    text-transform: capitalize;
+}
 .appointment {
     min-height: 40vw;
     width: 100%;
@@ -125,18 +141,6 @@ canvas {
 }
 .appointment .button button:active{
     background-color: antiquewhite;
-}
-
-.page1{
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.page1 h3{
-    font-size: 5vw;
-    font-family: poppins;
 }
 
 

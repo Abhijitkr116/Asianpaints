@@ -120,6 +120,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 var tl = gsap.timeline()
+tl.from(".herosection h1",{
+    opacity: 0,
+    duration: 5,
+    scale: 0.9,
+    y: -50,
+    
+})
 tl.from(".appointment",{
     opacity: 0, 
     duration: 1,
