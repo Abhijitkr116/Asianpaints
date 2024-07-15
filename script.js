@@ -95,28 +95,70 @@ window.onload = function() {
     animate();
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-    const boxes = document.querySelectorAll('.dbox');
-    let prevBox = null;
+    document.addEventListener("DOMContentLoaded", function() {
+        const boxes = document.querySelectorAll('.dbox');
+        let prevBox = null;
 
-    boxes.forEach(box => {
-        box.addEventListener('mouseenter', () => {
-            if (prevBox && prevBox !== box) {
-                gsap.to(prevBox, {
-                    width: '600px',
-                    duration: 1.8,
+        boxes.forEach(box => {
+            box.addEventListener('mouseenter', () => {
+                if (prevBox && prevBox !== box) {
+                    gsap.to(prevBox, {
+                        width: '600px',
+                        duration: 2,
+                        ease: 'elastic.out(1,0.3)'
+                    });
+                    gsap.to(prevBox.querySelector('img'), {
+                        opacity: 1,
+                        duration: 2,
+                        ease: 'elastic.out(1,0.3)'
+                    });
+                    gsap.to(prevBox.querySelector('h2'), {
+                        color: '#282828c3',
+                        ease: 'elastic.out(1,0.3)',
+                        fontSize: '2vw',
+                        top: "25%"
+                    });
+                    gsap.to(prevBox.querySelector('p'), {
+                        opacity: 0,
+                        duration: 2,
+                        ease: 'elastic.out(1,0.3)'
+                    });
+                    gsap.to(prevBox.querySelector('button'), {
+                        opacity: 0,
+                        duration: 2,
+                        ease: 'elastic.out(1,0.3)'
+                    });
+                }
+                gsap.to(box, {
+                    width: '81%',
+                    duration: 2,
                     ease: 'elastic.out(1,0.3)'
                 });
-            }
-            gsap.to(box, {
-                width: '81%',
-                duration: 1.8,
-                ease: 'elastic.out(1,0.3)'
+                gsap.to(box.querySelector('img'), {
+                    opacity: 0,
+                    duration: 2,
+                    ease: 'elastic.out(1,0.3)'
+                });
+                gsap.to(box.querySelector('h2'), {
+                    color: '#000',
+                    ease: 'elastic.out(1,0.3)',
+                    fontSize: '4vw',
+                    top: "18%"
+                });
+                gsap.to(box.querySelector('p'), {
+                    opacity: 1,
+                    duration: 2,
+                    ease: 'elastic.out(1,0.3)'
+                });
+                gsap.to(box.querySelector('button'), {
+                    opacity: 1,
+                    duration: 2,
+                    ease: 'elastic.out(1,0.3)'
+                });
+                prevBox = box;
             });
-            prevBox = box;
         });
     });
-});
 
 
 var tl = gsap.timeline()

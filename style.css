@@ -152,9 +152,9 @@ canvas {
 }
 .home-needs h1{
     text-align: center;
-    font-size: 3vw;
+    font-size: 3rem;
     text-transform: capitalize;
-    font-family: samsung;
+    font-family: bovino;
     font-weight: 900;
     background: -webkit-linear-gradient(#F2942C,#502265);
     -webkit-background-clip: text;
@@ -162,7 +162,7 @@ canvas {
 }
 .home-needs p{
     text-align: center;
-    
+    font-size: 1.1rem;
 }
 
 .home-needs .design {
@@ -194,11 +194,50 @@ canvas {
     background-color: #502265;
     border-radius: 1rem;
     position: absolute;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
 }
 .home-needs .dbox h2{
     position: absolute;
     top: 25%;
     left: 10%;
     font-family: bovino;
-    font-size: 3vw;
+    font-size: 2.5rem;
+    color: #282828c3;
 }
+.home-needs .dbox p{
+    width: 60%;
+    position: absolute;
+    top: 45%;
+    left: 10%;
+    /* padding-left: 7.8rem; */
+    text-align: justify;
+    font-family: samsung;
+    font-size: 1.2rem;
+    margin-top: -1.5rem;
+    color: #111;
+    opacity: 0;
+}
+.home-needs .dbox button{
+    position: absolute;
+    top: 60%;
+    left: 10%;
+    /* padding-left: 7.8rem; */
+    text-align: justify;
+    font-family: samsung;
+    font-size: 1rem;
+    color: #111;
+    padding: 0.5rem 2rem 0.4rem 2rem;
+    border: none;
+    border-radius: 2rem;
+    opacity: 0;
+}
+.home-needs .dbox button i{
+    transition: all 0.3s ease;
+    margin-left: 0.3rem;
+
+}
+.home-needs .dbox button:hover i{
+    margin-left: 1rem;
+}
+
