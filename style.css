@@ -14,9 +14,14 @@
     font-family: samsung; 
     src: url('Fonts/samsungsharpsans-medium_v2.ttf'); 
 }
+/* to much used */
 @font-face { 
     font-family: bovino; 
     src: url('Fonts/Bovino-Regular.otf'); 
+}
+@font-face { 
+    font-family: eger; 
+    src: url('Fonts/eger-regular.otf'); 
 }
 
 * {
@@ -29,6 +34,9 @@ html, body {
     height: 100%;
     width: 100%;
     font-family: "Work Sans", sans-serif;
+}
+body::-webkit-scrollbar{
+    display: none;
 }
 main {
     height: 100%;
@@ -45,24 +53,225 @@ canvas {
     height: 100%;
     pointer-events: none; /* So that mouse events pass through the canvas */
     background: transparent; /* Make the canvas background transparent */
-    z-index: 100;
+    z-index: 1000;
 }
-.herosection{
-    height: 100%;
+.fs{
     width: 100%;
-    background-color: #000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    display: grid;
+    place-items: center;
 }
-.herosection h1{
+.fs h1{
     background: -webkit-linear-gradient(#F2942C,#502265);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-family: Samsung;
-    font-size: 9vw;
-    text-transform: capitalize;
+    font-family: eger;
+    font-size: 25vw;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    font-weight: 100;
 }
+.fs h1 .child{
+    opacity: 0;
+}
+.asian{
+    width: 100%;
+    height: 0%;
+    position: absolute;
+    bottom: 0;
+    background-color: #9763af;
+    display: flex;
+    justify-content: space-between;
+}
+.herosection{
+    height: 100%;
+    position: relative;
+    width: 100%;
+    top: 100%;
+    background-color: #dadada;
+    z-index: 200;
+    opacity: 1;
+    overflow: hidden;
+}
+.reveal .parent{
+    display: block;
+    /* background-color: #9763af; */
+    overflow: hidden;
+}
+.reveal .child{
+    display: block;
+    transform: translate(0, 105%);
+}
+.herosection nav{
+    /* background-color: #c8977b; */
+    width: 100%;
+    padding: 2rem 3vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.herosection nav .brand a img{
+    height: 2.2rem;
+}
+.herosection nav .links{
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+.herosection nav .links i{
+    font-size: 1.6rem;
+    /* color: #502265; */
+    color: #000;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.herosection nav .links i:active{
+    scale: 1.1;
+}
+.herosection nav .links button{
+    border: none;
+    /* padding: 0.6rem 1rem 0.4rem 1rem; */
+    padding: 0.45rem 1.5rem 0.6rem 1.5rem;
+    height: 2.2rem;
+    border-radius: 2rem;
+    /* background-color: #502265; */
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    gap: 0.2rem;
+    font-family: samsung;
+    overflow: hidden;
+}
+.herosection nav .links button span{
+    transition: all 0.2s ease;
+}
+.herosection nav .links button:hover span{
+    transform: translate(0,-27px);
+}
+.herosection nav .links button:active{
+    background-color: #111;
+}
+.herosection .nav-menu{
+    height: 100%;
+    width: 100%;
+    background-color: #000;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    z-index: 20;
+}
+.herosection .nav-menu a{
+    text-decoration: none;
+    color: #fff;
+    font-family: samsung;
+    font-size: 4vw;
+    /* background-color: red; */
+    width: 45%;
+    display: flex;
+}
+.herosection .nav-menu a i{
+    display: block;
+    transform: translate(10px, 0);
+    transition: all 0.2s ease;
+}
+.herosection .nav-menu a:hover i{
+    transform: translate(25px, -10px);
+    /* transform: translateY(-10px); */
+}
+.herosection .nav-menu a:hover{
+    background: -webkit-linear-gradient(#F2942C,#502265);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.herosection .nav-menu .close{
+    position: absolute;
+    z-index: 100;
+    top: 5%;
+    right: 5%;
+    background-color: #ffffff5a;
+    width: 2rem;
+    height: 2rem;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+.herosection .nav-menu .close:hover{
+    scale: 1.5;
+    background: -webkit-linear-gradient(#f2962c9b,#50226596);
+}
+.herosection .nav-menu .close i{
+    transition: all 0.2s ease;
+}
+.herosection .nav-menu .close:active i{
+    transform: rotate(120deg);
+}
+
+
+.herosection .content{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.herosection .content h1{
+    /* background-color: #6d3487; */
+    text-align: center;
+    width: 100%;
+    font-family: samsung;
+    font-size: 5vw;
+    font-weight: 900;
+    /* text-transform: capitalize; */
+}
+.herosection .buttons{
+    width: 100%;
+    /* margin-left: 35%; */
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+}
+.herosection .content button{
+    border: none;
+    /* padding: 0.5rem 2rem 0.4rem 2rem; */
+    height: 2.5rem;
+    padding: 0.5rem 2rem 0.4rem 2rem;
+    border-radius: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    color: #fff;
+    gap: 0.5rem;
+    font-family: samsung;
+    overflow: hidden;
+}
+.herosection .content ul li{
+    list-style: none;
+}
+.herosection .content button i{
+    display: block;
+    transition: all 0.2s ease;
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+}
+.herosection .content button:hover i{
+    transform: translate(10px, 0);
+}
+
+
+
+
 .appointment {
     min-height: 40vw;
     width: 100%;
@@ -71,7 +280,7 @@ canvas {
     flex-direction: column;
     overflow: hidden;
     align-items: center;
-    /* border: 1px solid #fff; */
+    /* position: relative; */
     padding: 2rem 0;
     z-index: 2; /* Ensure it is above the canvas */
 }
@@ -187,23 +396,38 @@ canvas {
 .home-needs .design .interiorp{
     background-color: #B0673E;
 }
+.home-needs .design .exteriorp{
+    background-color: #C08E32;
+}
+.home-needs .design .wallt{
+    background-color: #e2e2e2;
+}
+.home-needs .design .wallpapers{
+    background-color: #D4BE9F;
+}
+.home-needs .design .waterp{
+    background-color: #C7CDD0;
+}
 .home-needs .design .dbox img{
     height: 100%;
     width: 100%;
     margin: auto;
-    background-color: #502265;
+    background-color: #77279c9d;
     border-radius: 1rem;
     position: absolute;
     object-fit: cover;
+    filter: blur(2px);
     transition: opacity 0.3s ease;
 }
 .home-needs .dbox h2{
     position: absolute;
-    top: 25%;
-    left: 10%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-80%);
     font-family: bovino;
     font-size: 2.5rem;
-    color: #282828c3;
+    /* color: #282828c3; */
+    color: #000;
 }
 .home-needs .dbox p{
     width: 60%;

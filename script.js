@@ -113,10 +113,11 @@ window.onload = function() {
                         ease: 'elastic.out(1,0.3)'
                     });
                     gsap.to(prevBox.querySelector('h2'), {
-                        color: '#282828c3',
                         ease: 'elastic.out(1,0.3)',
                         fontSize: '2vw',
-                        top: "25%"
+                        top: "50%",
+                        left: "50%",
+                        transform: "translate(-50%,-80%)"
                     });
                     gsap.to(prevBox.querySelector('p'), {
                         opacity: 0,
@@ -140,10 +141,11 @@ window.onload = function() {
                     ease: 'elastic.out(1,0.3)'
                 });
                 gsap.to(box.querySelector('h2'), {
-                    color: '#000',
                     ease: 'elastic.out(1,0.3)',
                     fontSize: '4vw',
-                    top: "18%"
+                    top: "18%",
+                    left: "10%",
+                    transform: "none"
                 });
                 gsap.to(box.querySelector('p'), {
                     opacity: 1,
@@ -160,43 +162,166 @@ window.onload = function() {
         });
     });
 
+    document.querySelectorAll(".reveal").forEach(function(elem){
+        let spanParent = document.createElement("span");
+        let spanChild = document.createElement("span");
+
+        spanParent.classList.add("parent");
+        spanChild.classList.add("child");
+
+        spanChild.textContent = elem.textContent;
+        spanParent.appendChild(spanChild);
+
+        elem.innerHTML = "";
+        elem.appendChild(spanParent);
+    })
+
+
+
+    var menubtn = document.querySelector(".menu");
+    var closebtn = document.querySelector(".close");
+
+    var flag = 0;
+
+    menubtn.addEventListener('click',function(){
+        if(flag == 0){
+            gsap.to(".herosection .nav-menu", {
+                left: 0,
+                duration: 1.5,
+                ease: 'back.out(1.7)'
+            });
+            flag = 1;
+        }
+    })
+    closebtn.addEventListener('click',function(){
+        if(flag == 1){
+            gsap.to(".herosection .nav-menu", {
+                left: "-100%",
+                duration: 1.5,
+                ease: 'back.out(1.7)'
+            });
+            flag = 0;
+        }
+    })
+
 
 var tl = gsap.timeline()
-tl.from(".herosection h1",{
-    opacity: 0,
-    duration: 5,
-    scale: 0.9,
-    y: -50,
-    
+// tl.from(".page-1 .content span",{
+// })
+
+
+
+
+
+
+
+
+
+
+tl.to(".fs h1 .child",{
+        transform: "translate(0, 5%)",
+        duration: 2,
+        ease: "expoScale(0.5,7,none)",
+        opacity: 1
+    })
+tl.to(".fs h1 .child",{
+        duration: 1.5,
+        ease: "expoScale(0.5,7,none)",
+        opacity: 0
+    })
+
+
+
+tl.to("main .fs",{
+    height: "0%",
+    duration: 2,
+    delay: -0.5,
+    ease: Expo.easeInOut,
 })
+tl.to("main .asian",{
+    height: "100%",
+    duration: 2,
+    delay:-2,
+    ease: Expo.easeInOut,
+})
+tl.to("main .herosection",{
+    top: 0,
+    duration: 2,
+    delay: -1.7,
+    ease: Expo.easeInOut
+})
+
+
+
+tl.to(".herosection .content h1 .child",{
+    transform: "translate(0, 0%)",
+    duration: 1.8,
+    delay: -.5,
+    ease: "power2.inOut"
+})
+tl.to(".herosection .content li .child",{
+    transform: "translate(0, 0%)",
+    duration: 1,
+    delay: -.5,
+    ease: "power2.inOut"
+})
+tl.from(".herosection .content .buttons button",{
+    opacity: 0,
+    duration: 1,
+    ease: "power2.inOut"
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 tl.from(".appointment",{
     opacity: 0, 
     duration: 1,
     scale: 0.9
 })
-tl.from(".appointment .content h1",{
-    opacity: 0, 
-    duration: 1,
-    y: -20,
-})
-tl.from(".appointment .content p",{
-    opacity: 0, 
-    duration: 0.5,
-    y: -10,
-})
-tl.from(".appointment .row .text",{
-    opacity: 0, 
-    duration: 0.5,
-    y: -10,
-    // stagger: 1
-})
-tl.from(".appointment form",{
-    opacity: 0, 
-    duration: 0.5,
-    y: 10,
-})
-tl.from(".appointment button",{
-    opacity: 0, 
-    duration: 0.7,
-    y: -20,
-})
+// tl.from(".appointment .content h1",{
+//     opacity: 0, 
+//     duration: 1,
+//     y: -20,
+// })
+// tl.from(".appointment .content p",{
+//     opacity: 0, 
+//     duration: 0.5,
+//     y: -10,
+// })
+// tl.from(".appointment .row .text",{
+//     opacity: 0, 
+//     duration: 0.5,
+//     y: -10,
+//     // stagger: 1
+// })
+// tl.from(".appointment form",{
+//     opacity: 0, 
+//     duration: 0.5,
+//     y: 10,
+// })
+// tl.from(".appointment button",{
+//     opacity: 0, 
+//     duration: 0.7,
+//     y: -20,
+// })
