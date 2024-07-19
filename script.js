@@ -251,6 +251,22 @@ tl.to("main .herosection",{
     ease: Expo.easeInOut
 })
 
+tl.from(".circle2",{
+    scale: 3,
+    duration: 2,
+    ease: "power2.inOut"
+},"name")
+tl.to(".circle1",{
+    duration: 2,
+    backgroundColor: "#9763af49",
+    ease: "power2.inOut"
+},"name")
+tl.to(".circle3",{
+    duration: 2,
+    backgroundColor: "#ba9a6444",
+    ease: "power2.inOut"
+},"name")
+
 
 
 tl.to(".herosection .content h1 .child",{
@@ -272,7 +288,24 @@ tl.from(".herosection .content .buttons button",{
 })
 
 
-
+tl.to(".circle1",{
+    top: "50%",
+    duration: 1,
+    opacity: 0,
+    ease: "power2.inOut"
+},"circle")
+tl.to(".circle3",{
+    bottom: "50%",
+    duration: 1,
+    opacity: 0,
+    ease: "power2.inOut"
+},"circle")
+tl.to(".circle2",{
+    scale: 0,
+    duration: 1,
+    opacity: 0,
+    ease: "power2.inOut"
+},"circle")
 
 
 
