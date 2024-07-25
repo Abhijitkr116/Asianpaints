@@ -322,12 +322,11 @@ canvas {
     font-family: samsung;
     text-transform: capitalize;
     text-align: center;
-    font-style: italic;
+    font-weight: bold;
 }
 .appointment .content p {
-    font-style: italic;
-    font-size: 1.2rem;
-    font-weight: 400;
+    font-size: 1rem;
+    font-weight: 300;
     text-align: center;
 }
 .appointment .row {
@@ -365,8 +364,7 @@ canvas {
     background-color: #fff;
 }
 .appointment .button button i {
-    background-color: #000000;
-    color: #fff;
+    color: #000;
     padding: 0.4rem;
     border-radius: 50%;
     margin-left: 0.3rem;
@@ -374,8 +372,8 @@ canvas {
 }
 .appointment .button button:hover i {
     margin-left: 1rem;
-    background-color: #fff;
-    color: #000;
+    background-color: #000;
+    color: #fff;
 }
 .appointment .button button:active{
     background-color: antiquewhite;
@@ -385,7 +383,7 @@ canvas {
 
 /* Home-Needs */
 .home-needs{
-    height: 100vh;
+    min-height: 100vh;
     padding: 5vw 1rem;
 }
 .home-needs h1{
@@ -494,3 +492,97 @@ canvas {
     margin-left: 1rem;
 }
 
+
+.Explore-interior{
+    height: 100vh;
+    padding: 5vw 1rem;
+    position: relative;
+}
+.Explore-interior h1{
+    text-align: center;
+    font-size: 3rem;
+    text-transform: capitalize;
+    font-family: bovino;
+    font-weight: 900;
+    background: -webkit-linear-gradient(#F2942C,#502265);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.Explore-interior p{
+    text-align: center;
+    font-size: 1.1rem;
+}
+.Explore-interior .interiors{
+    width: 100%;
+    height: 500px;
+    margin-top: 5rem;
+    /* background-color: #B0673E; */
+    display: flex;
+    justify-content: space-evenly;
+}
+.Explore-interior .interiors .interior-box{
+    height: 85%;
+    width: 30%;
+    /* background-color: rgb(205, 71, 71); */
+    border: 2px solid #d9d9d9;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: end;
+}
+.Explore-interior .interiors .interior-box img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    filter: blur(1px);
+    position: absolute;
+}
+
+.interiors .interior-box .content{
+    position: relative;
+    background-color: #82737ba8;
+    width: 70%;
+    padding: 2rem;
+    transition: all 0.3s ease-in-out;
+    border-top-right-radius: 0.5rem;
+    /* justify-content: center; */
+}
+
+.interiors .interior-box .content:hover{
+    scale: 1.1;
+    width: 80%;
+    padding: 4rem;
+    background-color: #82737bda;
+}
+.interiors .interior-box .content h3{
+    transition: all 0.3s ease-in-out;
+
+}
+.interiors .interior-box .content:hover h3{
+    font-size: 2.5rem;
+}
+.interiors .interior-box .content h3{
+    font-family: samsung;
+    font-size: 2rem;
+    font-weight: 900;
+    text-align: start;
+}
+.interiors .interior-box .content p{
+    text-align: start;
+}
+.interiors .interior-box .content button{
+    background-color: #ffffff42;
+    color: #ffffff;
+    border: #fff 1px solid;
+    padding: 0.3rem 1.5rem;
+    border-radius: 2rem;
+}
+.interiors .interior-box .content button i{
+    transition: all 0.3s ease-in-out;
+
+}
+.interiors .interior-box .content button:hover i{
+    margin-left: 0.5rem;
+}
