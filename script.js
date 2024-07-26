@@ -312,6 +312,24 @@ tl.to(".circle2",{
 
 
 
+// Video controls
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.from(".page-p .video-div",{
+    scale:0.8,
+    scrollTrigger:{
+        trigger:".page-p",
+        scroller: "body",
+        markers: true, 
+        start: "top 40%",
+        end: "top 25%",
+        scrub:2
+        }
+})
+
+
+
+
 
 
 
@@ -332,29 +350,29 @@ tl.from(".appointment",{
     duration: 1,
     scale: 0.9
 })
-// tl.from(".appointment .content h1",{
-//     opacity: 0, 
-//     duration: 1,
-//     y: -20,
-// })
-// tl.from(".appointment .content p",{
-//     opacity: 0, 
-//     duration: 0.5,
-//     y: -10,
-// })
-// tl.from(".appointment .row .text",{
-//     opacity: 0, 
-//     duration: 0.5,
-//     y: -10,
-//     // stagger: 1
-// })
-// tl.from(".appointment form",{
-//     opacity: 0, 
-//     duration: 0.5,
-//     y: 10,
-// })
-// tl.from(".appointment button",{
-//     opacity: 0, 
-//     duration: 0.7,
-//     y: -20,
-// })
+tl.from(".appointment .content h1",{
+    opacity: 0, 
+    duration: 1,
+    y: -20,
+})
+tl.from(".appointment .content p",{
+    opacity: 0, 
+    duration: 0.5,
+    y: -10,
+})
+tl.from(".appointment .row .text",{
+    opacity: 0, 
+    duration: 0.5,
+    y: -10,
+    // stagger: 1
+})
+tl.from(".appointment form",{
+    opacity: 0, 
+    duration: 0.5,
+    y: 10,
+})
+tl.from(".appointment button",{
+    opacity: 0, 
+    duration: 0.7,
+    y: -20,
+})
